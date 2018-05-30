@@ -1,1 +1,1 @@
-web: ./target/release/oscar
+bot: ./target/release/oscar
