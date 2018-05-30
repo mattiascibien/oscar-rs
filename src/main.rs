@@ -3,7 +3,6 @@ extern crate log;
 extern crate env_logger;
 extern crate dotenv;
 
-use std::env;
 use std::{thread,time};
 
 use dotenv::dotenv;
