@@ -22,15 +22,15 @@ fn main() {
     dotenv().ok();
 
     thread::spawn(move || {
-            loop {
-                info!("Running");
-                try_retweet();
-                thread::sleep(time::Duration::from_secs(5*60));
-            }
-        });
+        loop {
+            info!("Running");
+            try_retweet();
+            thread::sleep(time::Duration::from_secs(5*60));
+        }
+    });
 
-        let addr =  format!("{}{}", "0.0.0.0:", env::var("PORT").ok().unwrap_or("8080".to_string()));
-        gotham::start(addr, || Ok(say_hello))
+    let addr =  format!("{}{}", "0.0.0.0:", env::var("PORT").ok().unwrap_or("8080".to_string()));
+    gotham::start(addr, || Ok(say_hello))
 }
 
 fn try_retweet() {
